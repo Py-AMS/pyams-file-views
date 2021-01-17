@@ -4,7 +4,7 @@
 		<input type="file"
 			   id="${view.id}" name="${view.name}"
 			   class="custom-file-input"
-			   required="${view.required}"
+			   required="${'required' if view.required else None}"
 			   data-ams-data="${tales:object_data(view)}" />
 		<label for="${view.id}"
 			   class="custom-file-label"
