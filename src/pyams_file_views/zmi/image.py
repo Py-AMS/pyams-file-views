@@ -86,7 +86,7 @@ def rotate_image(request):
     permission_checker = queryMultiAdapter((image, request, None), IViewContextPermissionChecker)
     if permission_checker is not None:
         permission = permission_checker.edit_permission
-        if not request.has_permission(permission, image):
+        if not request.has_permission(permission, context=image):
             raise HTTPForbidden()
     IImageFile(image).rotate(-90)
     # commit transaction to save blobs!

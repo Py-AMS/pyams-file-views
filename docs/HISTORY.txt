@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2
+-----
+ - added missing "context" argument to permission check
+
 1.1.1
 -----
  - packaging mismatch...
