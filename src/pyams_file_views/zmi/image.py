@@ -395,12 +395,18 @@ class ImageBannerSelectionForm(ImageSelectionForm):
     selection_name = 'banner'
 
 
+class ResponsiveImageSelectionForm(ImageSelectionForm):
+    """Responsive image selection form"""
+
+    selection_ratio = None
+
+
 #
 # XS responsive selection form
 #
 
 @viewlet_config(name='xs-selection.action', context=IResponsiveImage, layer=IAdminLayer,
-                view=IFileWidget, manager=IContextActionsViewletManager, weight=58)
+                view=IFileWidget, manager=IContextActionsViewletManager, weight=60)
 class ImageXSSelectionAction(ImageSelectionAction):
     """Image XS selection action"""
 
@@ -409,7 +415,7 @@ class ImageXSSelectionAction(ImageSelectionAction):
 
 
 @ajax_form_config(name='xs-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
-class ImageXSSelectionForm(ImageSelectionForm):
+class ImageXSSelectionForm(ResponsiveImageSelectionForm):
     """Image XS selection form"""
 
     selection_name = 'xs'
@@ -420,7 +426,7 @@ class ImageXSSelectionForm(ImageSelectionForm):
 #
 
 @viewlet_config(name='sm-selection.action', context=IResponsiveImage, layer=IAdminLayer,
-                view=IFileWidget, manager=IContextActionsViewletManager, weight=58)
+                view=IFileWidget, manager=IContextActionsViewletManager, weight=62)
 class ImageSMSelectionAction(ImageSelectionAction):
     """Image SM selection action"""
 
@@ -440,7 +446,7 @@ class ImageSMSelectionForm(ImageSelectionForm):
 #
 
 @viewlet_config(name='md-selection.action', context=IResponsiveImage, layer=IAdminLayer,
-                view=IFileWidget, manager=IContextActionsViewletManager, weight=58)
+                view=IFileWidget, manager=IContextActionsViewletManager, weight=64)
 class ImageMDSelectionAction(ImageSelectionAction):
     """Image MD selection action"""
 
@@ -460,7 +466,7 @@ class ImageMDSelectionForm(ImageSelectionForm):
 #
 
 @viewlet_config(name='lg-selection.action', context=IResponsiveImage, layer=IAdminLayer,
-                view=IFileWidget, manager=IContextActionsViewletManager, weight=58)
+                view=IFileWidget, manager=IContextActionsViewletManager, weight=66)
 class ImageLGSelectionAction(ImageSelectionAction):
     """Image LG selection action"""
 
@@ -480,7 +486,7 @@ class ImageLGSelectionForm(ImageSelectionForm):
 #
 
 @viewlet_config(name='xl-selection.action', context=IResponsiveImage, layer=IAdminLayer,
-                view=IFileWidget, manager=IContextActionsViewletManager, weight=58)
+                view=IFileWidget, manager=IContextActionsViewletManager, weight=68)
 class ImageXLSelectionAction(ImageSelectionAction):
     """Image XL selection action"""
 
