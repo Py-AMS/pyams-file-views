@@ -141,6 +141,7 @@ class ImageCropForm(AdminModalEditForm):
 
     fields = Fields(Interface)
     buttons = Buttons(IImageCropFormButtons)
+    has_border = True
 
     @handler(IImageCropFormButtons['crop'])
     def handle_crop(self, action):
@@ -258,6 +259,7 @@ class ImageSelectionForm(AdminModalEditForm):
 
     fields = Fields(Interface)
     buttons = Buttons(IImageSelectionFormButtons)
+    has_border = True
 
     selection_name = None
 
