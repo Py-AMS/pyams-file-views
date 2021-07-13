@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2020-12-28 02:08+0100\n"
+"POT-Creation-Date: 2021-06-28 22:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,15 @@ msgstr "Tourner l'image vers la droite"
 msgid "Crop image"
 msgstr "Recadrer l'image"
 
+#: src/pyams_file_views/zmi/image.py:126
+msgid "Crop"
+msgstr "Recadrer"
+
+#: src/pyams_file_views/zmi/image.py:127 src/pyams_file_views/zmi/image.py:237
+#: src/pyams_file_views/zmi/image.py:609
+msgid "Cancel"
+msgstr "Annuler"
+
 #: src/pyams_file_views/zmi/image.py:168
 msgid ""
 "You can use this form to crop an image.  \n"
@@ -53,20 +62,49 @@ msgstr ""
 "**Recadrer une image modifie l'image originale et réinitialise toutes les "
 "sélections de vignettes !**"
 
-#: src/pyams_file_views/zmi/image.py:505
+#: src/pyams_file_views/zmi/image.py:236
+msgid "Select thumbnail"
+msgstr "Valider la sélection"
+
+#: src/pyams_file_views/zmi/image.py:254
+#, python-format
+msgid "{} selection"
+msgstr "Sélection : {}"
+
+#: src/pyams_file_views/zmi/image.py:511
 msgid "Display all selections"
 msgstr "Afficher toutes les sélections"
 
-#: src/pyams_file_views/zmi/image.py:520
+#: src/pyams_file_views/zmi/image.py:526
 msgid "Display all image selections"
 msgstr "Affichage de toutes les sélections de l'image"
 
-#: src/pyams_file_views/zmi/image.py:557 src/pyams_file_views/zmi/image.py:615
-#: src/pyams_file_views/zmi/image.py:602
+#: src/pyams_file_views/zmi/image.py:563 src/pyams_file_views/zmi/image.py:608
+#: src/pyams_file_views/zmi/image.py:621
 msgid "Resize image"
 msgstr "Réduire la taille de l'image"
 
-#: src/pyams_file_views/zmi/image.py:641
+#: src/pyams_file_views/zmi/image.py:573
+msgid "New image width"
+msgstr "Largeur de l'image"
+
+#: src/pyams_file_views/zmi/image.py:576
+msgid "New image height"
+msgstr "Hauteur de l'image"
+
+#: src/pyams_file_views/zmi/image.py:579
+msgid "Keep aspect ratio"
+msgstr "Conserver le ratio"
+
+#: src/pyams_file_views/zmi/image.py:580
+msgid ""
+"Check to keep original image aspect ratio; image will then be resized as "
+"large as possible within given limits"
+msgstr ""
+"Sélectionner cette option pour conserver le ratio hauteur/largeur de l'image "
+"d'origine"
+
+#: src/pyams_file_views/zmi/image.py:647
 msgid ""
 "You can use this form to reduce an image size.  \n"
 "**Resizing an image will alter the original image, and reset all thumbnails "
@@ -76,44 +114,6 @@ msgstr ""
 "la limite des dimensions de l'image d'origine.  \n"
 "**Cette modification modifie l'image originale et réinitialise toutes les "
 "sélections de vignettes !**"
-
-#: src/pyams_file_views/zmi/image.py:126
-msgid "Crop"
-msgstr "Recadrer"
-
-#: src/pyams_file_views/zmi/image.py:127 src/pyams_file_views/zmi/image.py:237
-#: src/pyams_file_views/zmi/image.py:603
-msgid "Cancel"
-msgstr "Annuler"
-
-#: src/pyams_file_views/zmi/image.py:236
-msgid "Select thumbnail"
-msgstr "Valider la sélection"
-
-#: src/pyams_file_views/zmi/image.py:567
-msgid "New image width"
-msgstr "Largeur de l'image"
-
-#: src/pyams_file_views/zmi/image.py:570
-msgid "New image height"
-msgstr "Hauteur de l'image"
-
-#: src/pyams_file_views/zmi/image.py:573
-msgid "Keep aspect ratio"
-msgstr "Conserver le ratio"
-
-#: src/pyams_file_views/zmi/image.py:574
-msgid ""
-"Check to keep original image aspect ratio; image will then be resized as "
-"large as possible within given limits"
-msgstr ""
-"Sélectionner cette option pour conserver le ratio hauteur/largeur de l'image "
-"d'origine"
-
-#: src/pyams_file_views/zmi/image.py:254
-#, python-format
-msgid "{} selection"
-msgstr "Sélection : {}"
 
 #: src/pyams_file_views/widget/templates/media-input.pt:11
 #: src/pyams_file_views/widget/templates/file-input.pt:11

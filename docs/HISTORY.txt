@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.2.0
+-----
+ - added base class for responsive selections forms
+ - added frame border in images selection forms
+ - updated order of selections forms actions
+
 1.1.2
 -----
  - added missing "context" argument to permission check
