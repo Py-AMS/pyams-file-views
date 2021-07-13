@@ -2,7 +2,7 @@
 	<tal:loop repeat="thumbnailer view.get_thumbnails().items()">
 		<tal:var define="section thumbnailer[0];
 						 adapters thumbnailer[1];">
-			<fieldset>
+			<fieldset class="border">
 				<legend class="switcher"
 						data-ams-state="open">${section}</legend>
 				<div class="row">
