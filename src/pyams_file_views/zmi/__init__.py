@@ -34,6 +34,8 @@ __docformat__ = 'restructuredtext'
 class FileModifierAction(ContextAction):
     """File modifier action"""
 
+    hint_placement = 'left'
+
     @property
     def permission(self):
         """Action permission getter"""
