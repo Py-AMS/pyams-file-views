@@ -89,7 +89,7 @@ class FileWidget(FileWidgetBase):
             return None
         value = self.field.get(self.context)
         if isinstance(value, dict):
-            lang = getattr(self, 'lang', None)
+            lang = getattr(self, 'language', None)
             if lang is not None:
                 value = value.get(lang)
         return value
