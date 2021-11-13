@@ -29,12 +29,13 @@ from zope.schema.fieldproperty import FieldProperty
 from pyams_file.image import ThumbnailGeometry
 from pyams_file.interfaces import IImageFile, IResponsiveImage
 from pyams_file.interfaces.thumbnail import IThumbnailer, IThumbnails
-from pyams_file_views.zmi import FileModifierAction
+from pyams_file_views.zmi import FileModifierAction, FileModifierFormMixin
 from pyams_form.ajax import ajax_form_config
 from pyams_form.browser.checkbox import SingleCheckBoxFieldWidget
-from pyams_form.button import Buttons, handler
+from pyams_form.button import handler
 from pyams_form.field import Fields
 from pyams_form.form import EditForm
+from pyams_form.interfaces import DISPLAY_MODE
 from pyams_form.interfaces.form import IAJAXFormRenderer
 from pyams_form.interfaces.widget import IFileWidget
 from pyams_layer.interfaces import IPyAMSLayer
@@ -128,7 +129,7 @@ class IImageCropFormButtons(Interface):
 
 
 @ajax_form_config(name='image-crop.html', context=IImageFile, layer=IPyAMSLayer)
-class ImageCropForm(AdminModalEditForm):
+class ImageCropForm(FileModifierFormMixin, AdminModalEditForm):
     """Image crop form"""
 
     @property
@@ -140,12 +141,14 @@ class ImageCropForm(AdminModalEditForm):
     prefix = 'crop_form.'
 
     fields = Fields(Interface)
-    buttons = Buttons(IImageCropFormButtons)
+    buttons_interface = IImageCropFormButtons
     has_border = True
 
     @handler(IImageCropFormButtons['crop'])
     def handle_crop(self, action):
         """Crop button handler"""
+        if self.mode == DISPLAY_MODE:
+            return
         image = IImageFile(self.context)
         image_size = image.get_image_size()  # pylint: disable=assignment-from-no-return
         params = self.request.params
@@ -238,7 +241,7 @@ class IImageSelectionFormButtons(Interface):
     cancel = CloseButton(name='close', title=_("Cancel"))
 
 
-class ImageSelectionForm(AdminModalEditForm):
+class ImageSelectionForm(FileModifierFormMixin, AdminModalEditForm):
     """Image thumbnail selection form"""
 
     @property
@@ -258,7 +261,8 @@ class ImageSelectionForm(AdminModalEditForm):
     prefix = 'thumbnail_form.'
 
     fields = Fields(Interface)
-    buttons = Buttons(IImageSelectionFormButtons)
+    buttons_interface = IImageSelectionFormButtons
+
     has_border = True
 
     selection_name = None
@@ -273,6 +277,8 @@ class ImageSelectionForm(AdminModalEditForm):
     @handler(IImageSelectionFormButtons['select'])
     def handle_select(self, action):
         """Select button handler"""
+        if self.mode == DISPLAY_MODE:
+            return
         image = IImageFile(self.context)
         params = self.request.params
         geometry = ThumbnailGeometry()
@@ -612,7 +618,7 @@ class IImageResizeFormButtons(Interface):
 
 
 @ajax_form_config(name='resize.html', context=IImageFile, layer=IPyAMSLayer)
-class ImageResizeForm(AdminModalEditForm):
+class ImageResizeForm(FileModifierFormMixin, AdminModalEditForm):
     """Image resize form"""
 
     @property
@@ -624,11 +630,13 @@ class ImageResizeForm(AdminModalEditForm):
 
     fields = Fields(IImageResizeInfo)
     fields['keep_ratio'].widget_factory = SingleCheckBoxFieldWidget
-    buttons = Buttons(IImageResizeFormButtons)
+    buttons_interface = IImageResizeFormButtons
 
     @handler(IImageResizeFormButtons['resize'])
     def handle_resize(self, action):
         """Resize button handler"""
+        if self.mode == DISPLAY_MODE:
+            return
         data, errors = self.extract_data()
         if errors:
             self.status = self.form_errors_message

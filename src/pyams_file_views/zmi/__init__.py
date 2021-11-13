@@ -22,10 +22,13 @@ from zope.component import queryAdapter, queryMultiAdapter
 from zope.interface import Interface
 
 from pyams_file.interfaces import IFile
+from pyams_form.button import Buttons
+from pyams_form.interfaces import DISPLAY_MODE
 from pyams_security.interfaces import IViewContextPermissionChecker
 from pyams_security.interfaces.base import FORBIDDEN_PERMISSION, MANAGE_PERMISSION
 from pyams_skin.viewlet.actions import ContextAction
 from pyams_utils.adapter import ContextRequestViewAdapter, adapter_config
+from pyams_zmi.interfaces.form import IModalDisplayFormButtons
 
 
 __docformat__ = 'restructuredtext'
@@ -43,6 +46,19 @@ class FileModifierAction(ContextAction):
             return self.view.form.edit_permission
         except AttributeError:
             return MANAGE_PERMISSION
+
+
+class FileModifierFormMixin:
+    """Image modifier form mixin"""
+
+    buttons_interface = IModalDisplayFormButtons
+
+    @property
+    def buttons(self):
+        """Form buttons getter"""
+        if self.mode == DISPLAY_MODE:
+            return Buttons(IModalDisplayFormButtons)
+        return Buttons(self.buttons_interface)
 
 
 @adapter_config(required=(IFile, Interface, Interface),
