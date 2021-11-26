@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2.1
+-----
+ - added file modifier form mixin class to handle buttons selection in forms in display mode
+ - updated language getter attribute in I18n file widget
+
 1.2.0
 -----
  - added base class for responsive selections forms
