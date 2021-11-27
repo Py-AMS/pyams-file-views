@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2021-06-28 22:33+0200\n"
+"POT-Creation-Date: 2021-11-27 15:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,73 +37,77 @@ msgstr ""
 msgid "Download original file"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:73
+#: ./src/pyams_file_views/zmi/image.py:81
+msgid "Image preview"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:102
 msgid "Rotate image right"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:116
-#: ./src/pyams_file_views/zmi/image.py:139
+#: ./src/pyams_file_views/zmi/image.py:145
+#: ./src/pyams_file_views/zmi/image.py:168
 msgid "Crop image"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:126
+#: ./src/pyams_file_views/zmi/image.py:155
 msgid "Crop"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:127
-#: ./src/pyams_file_views/zmi/image.py:237
-#: ./src/pyams_file_views/zmi/image.py:609
+#: ./src/pyams_file_views/zmi/image.py:156
+#: ./src/pyams_file_views/zmi/image.py:269
+#: ./src/pyams_file_views/zmi/image.py:645
 msgid "Cancel"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:168
+#: ./src/pyams_file_views/zmi/image.py:200
 msgid ""
 "You can use this form to crop an image.  \n"
 "**Cropping an image will alter the original image, and reset all thumbnails and adaptive selections!**"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:236
+#: ./src/pyams_file_views/zmi/image.py:268
 msgid "Select thumbnail"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:254
+#: ./src/pyams_file_views/zmi/image.py:286
 #, python-format
 msgid "{} selection"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:511
+#: ./src/pyams_file_views/zmi/image.py:547
 msgid "Display all selections"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:526
+#: ./src/pyams_file_views/zmi/image.py:562
 msgid "Display all image selections"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:563
-#: ./src/pyams_file_views/zmi/image.py:608
-#: ./src/pyams_file_views/zmi/image.py:621
+#: ./src/pyams_file_views/zmi/image.py:599
+#: ./src/pyams_file_views/zmi/image.py:644
+#: ./src/pyams_file_views/zmi/image.py:657
 msgid "Resize image"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:573
+#: ./src/pyams_file_views/zmi/image.py:609
 msgid "New image width"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:576
+#: ./src/pyams_file_views/zmi/image.py:612
 msgid "New image height"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:579
+#: ./src/pyams_file_views/zmi/image.py:615
 msgid "Keep aspect ratio"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:580
+#: ./src/pyams_file_views/zmi/image.py:616
 msgid ""
 "Check to keep original image aspect ratio; image will then be resized as "
 "large as possible within given limits"
 msgstr ""
 
-#: ./src/pyams_file_views/zmi/image.py:647
+#: ./src/pyams_file_views/zmi/image.py:685
 msgid ""
 "You can use this form to reduce an image size.  \n"
 "**Resizing an image will alter the original image, and reset all thumbnails and adaptive selections!**"

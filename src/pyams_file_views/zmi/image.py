@@ -41,6 +41,7 @@ from pyams_form.interfaces.widget import IFileWidget
 from pyams_layer.interfaces import IPyAMSLayer
 from pyams_pagelet.pagelet import pagelet_config
 from pyams_security.interfaces import IViewContextPermissionChecker
+from pyams_security.interfaces.base import VIEW_SYSTEM_PERMISSION
 from pyams_skin.interfaces.viewlet import IContentPrefixViewletManager, \
     IContextActionsViewletManager, IHelpViewletManager
 from pyams_skin.schema.button import CloseButton, SubmitButton
@@ -60,6 +61,33 @@ from pyams_zmi.interfaces import IAdminLayer
 __docformat__ = 'restructuredtext'
 
 from pyams_file_views import _  # pylint: disable=ungrouped-imports
+
+
+#
+# Image preview
+#
+
+@pagelet_config(name='preview.html',
+                context=IImageFile, layer=IPyAMSLayer,
+                permission=VIEW_SYSTEM_PERMISSION)
+class ImagePreviewForm(AdminModalDisplayForm):
+    """Image preview"""
+
+    @property
+    def title(self):
+        """Form title getter"""
+        return self.context.title or self.context.filename
+
+    legend = _("Image preview")
+    modal_class = 'modal-xl'
+
+
+@viewlet_config(name='image-preview',
+                context=IImageFile, layer=IAdminLayer, view=ImagePreviewForm,
+                manager=IContentPrefixViewletManager, weight=10)
+@template_config(template='templates/image-preview.pt')
+class ImagePreviewImage(Viewlet):
+    """Image preview viewlet"""
 
 
 #

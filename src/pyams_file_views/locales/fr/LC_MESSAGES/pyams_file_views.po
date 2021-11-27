@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2021-06-28 22:33+0200\n"
+"POT-Creation-Date: 2021-11-27 15:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,24 +35,28 @@ msgstr "Télécharger"
 msgid "Download original file"
 msgstr "Télécharger le fichier original"
 
-#: src/pyams_file_views/zmi/image.py:73
+#: src/pyams_file_views/zmi/image.py:81
+msgid "Image preview"
+msgstr "Prévisualisation"
+
+#: src/pyams_file_views/zmi/image.py:102
 msgid "Rotate image right"
 msgstr "Tourner l'image vers la droite"
 
-#: src/pyams_file_views/zmi/image.py:116 src/pyams_file_views/zmi/image.py:139
+#: src/pyams_file_views/zmi/image.py:145 src/pyams_file_views/zmi/image.py:168
 msgid "Crop image"
 msgstr "Recadrer l'image"
 
-#: src/pyams_file_views/zmi/image.py:126
+#: src/pyams_file_views/zmi/image.py:155
 msgid "Crop"
 msgstr "Recadrer"
 
-#: src/pyams_file_views/zmi/image.py:127 src/pyams_file_views/zmi/image.py:237
-#: src/pyams_file_views/zmi/image.py:609
+#: src/pyams_file_views/zmi/image.py:156 src/pyams_file_views/zmi/image.py:269
+#: src/pyams_file_views/zmi/image.py:645
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/pyams_file_views/zmi/image.py:168
+#: src/pyams_file_views/zmi/image.py:200
 msgid ""
 "You can use this form to crop an image.  \n"
 "**Cropping an image will alter the original image, and reset all thumbnails "
@@ -62,41 +66,41 @@ msgstr ""
 "**Recadrer une image modifie l'image originale et réinitialise toutes les "
 "sélections de vignettes !**"
 
-#: src/pyams_file_views/zmi/image.py:236
+#: src/pyams_file_views/zmi/image.py:268
 msgid "Select thumbnail"
 msgstr "Valider la sélection"
 
-#: src/pyams_file_views/zmi/image.py:254
+#: src/pyams_file_views/zmi/image.py:286
 #, python-format
 msgid "{} selection"
 msgstr "Sélection : {}"
 
-#: src/pyams_file_views/zmi/image.py:511
+#: src/pyams_file_views/zmi/image.py:547
 msgid "Display all selections"
 msgstr "Afficher toutes les sélections"
 
-#: src/pyams_file_views/zmi/image.py:526
+#: src/pyams_file_views/zmi/image.py:562
 msgid "Display all image selections"
 msgstr "Affichage de toutes les sélections de l'image"
 
-#: src/pyams_file_views/zmi/image.py:563 src/pyams_file_views/zmi/image.py:608
-#: src/pyams_file_views/zmi/image.py:621
+#: src/pyams_file_views/zmi/image.py:599 src/pyams_file_views/zmi/image.py:644
+#: src/pyams_file_views/zmi/image.py:657
 msgid "Resize image"
 msgstr "Réduire la taille de l'image"
 
-#: src/pyams_file_views/zmi/image.py:573
+#: src/pyams_file_views/zmi/image.py:609
 msgid "New image width"
 msgstr "Largeur de l'image"
 
-#: src/pyams_file_views/zmi/image.py:576
+#: src/pyams_file_views/zmi/image.py:612
 msgid "New image height"
 msgstr "Hauteur de l'image"
 
-#: src/pyams_file_views/zmi/image.py:579
+#: src/pyams_file_views/zmi/image.py:615
 msgid "Keep aspect ratio"
 msgstr "Conserver le ratio"
 
-#: src/pyams_file_views/zmi/image.py:580
+#: src/pyams_file_views/zmi/image.py:616
 msgid ""
 "Check to keep original image aspect ratio; image will then be resized as "
 "large as possible within given limits"
@@ -104,7 +108,7 @@ msgstr ""
 "Sélectionner cette option pour conserver le ratio hauteur/largeur de l'image "
 "d'origine"
 
-#: src/pyams_file_views/zmi/image.py:647
+#: src/pyams_file_views/zmi/image.py:685
 msgid ""
 "You can use this form to reduce an image size.  \n"
 "**Resizing an image will alter the original image, and reset all thumbnails "
