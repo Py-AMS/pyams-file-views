@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.3.0
+-----
+ - added image preview
+
 1.2.1
 -----
  - added file modifier form mixin class to handle buttons selection in forms in display mode
