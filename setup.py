@@ -27,6 +27,7 @@ version = '1.3.0'
 long_description = open(README).read() + '\n\n' + open(HISTORY).read()
 
 tests_require = [
+    'pyams_catalog',
     'pyams_site',
     'pyams_skin',
     'pyams_zmi',
