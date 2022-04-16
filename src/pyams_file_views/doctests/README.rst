@@ -1,6 +1,6 @@
-===================
+========================
 PyAMS file views package
-===================
+========================
 
 Introduction
 ------------
@@ -18,6 +18,8 @@ This package is composed of a set of utility functions, usable into any Pyramid 
     >>> include_skin(config)
     >>> from pyams_zmi import includeme as include_zmi
     >>> include_zmi(config)
+    >>> from pyams_file_views import includeme as include_file
+    >>> include_file(config)
     >>> from pyams_file_views import includeme as include_file_views
     >>> include_file_views(config)
 
