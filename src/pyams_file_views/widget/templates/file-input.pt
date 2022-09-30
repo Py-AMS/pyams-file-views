@@ -10,7 +10,7 @@
 			   class="custom-file-label"
 			   i18n:translate="">Browse...</label>
 	</div>
-	<div class="row"
+	<div class="d-flex flex-row"
 		 tal:define="value view.current_value"
 		 tal:condition="value">
 		<div class="col-sm-auto my-2">
