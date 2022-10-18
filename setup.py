@@ -23,7 +23,7 @@ DOCS = os.path.join(os.path.dirname(__file__),
 README = os.path.join(DOCS, 'README.txt')
 HISTORY = os.path.join(DOCS, 'HISTORY.txt')
 
-version = '1.4.3'
+version = '1.4.4'
 long_description = open(README).read() + '\n\n' + open(HISTORY).read()
 
 tests_require = [
@@ -66,7 +66,7 @@ setup(name='pyams_file_views',
           'setuptools',
           # -*- Extra requirements: -*-
           'fanstatic',
-          'myams_js > 1.14.0',
+          'myams_js >= 1.14.0',
           'pyams_file',
           'pyams_form',
           'pyams_layer',

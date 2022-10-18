@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.4.4
+-----
+ - small error in package requirements
+
 1.4.3
 -----
  - set widget as deletable if widget or field is not required
