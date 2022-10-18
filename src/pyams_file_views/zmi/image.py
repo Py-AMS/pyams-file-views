@@ -79,7 +79,7 @@ class ImagePreviewForm(AdminModalDisplayForm):
         return self.context.title or self.context.filename
 
     legend = _("Image preview")
-    modal_class = 'modal-xl'
+    modal_class = 'modal-auto'
 
 
 @viewlet_config(name='image-preview',
