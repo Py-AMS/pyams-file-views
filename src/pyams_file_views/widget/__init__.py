@@ -97,7 +97,7 @@ class FileWidget(FileWidgetBase):
     @property
     def deletable(self):
         """Widget deletable flag getter"""
-        if self.required:
+        if self.required or self.field.required:
             return False
         if not self.ignore_context:
             value = self.current_value
