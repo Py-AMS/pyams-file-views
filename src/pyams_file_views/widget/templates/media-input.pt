@@ -43,10 +43,10 @@
 					 class="col-auto custom-control custom-switch border-0 text-right">
 					<input type="checkbox"
 						   class="custom-control-input"
-						   id="${view.id}__deleted}"
+						   id="${view.id}__deleted"
 						   name="${view.name}__deleted"
 						   value="true"/>
-					<label for="${view.id}__deleted}"
+					<label for="${view.id}__deleted"
 						   class="custom-control-label">
 						<i tal:omit-tag="" i18n:translate="">Delete</i>
 					</label>
