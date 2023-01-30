@@ -42,6 +42,7 @@ from pyams_layer.interfaces import IPyAMSLayer
 from pyams_pagelet.pagelet import pagelet_config
 from pyams_security.interfaces import IViewContextPermissionChecker
 from pyams_security.interfaces.base import VIEW_SYSTEM_PERMISSION
+from pyams_skin.interfaces import BOOTSTRAP_DEVICES_ICONS
 from pyams_skin.interfaces.viewlet import IContentPrefixViewletManager, \
     IContextActionsViewletManager, IHelpViewletManager
 from pyams_skin.schema.button import CloseButton, SubmitButton
@@ -243,7 +244,13 @@ class ImageSelectionAction(FileModifierAction):
     selection_name = None
     modal_target = True
 
+    @property
+    def icon_class(self):
+        """Icon class getter"""
+        return BOOTSTRAP_DEVICES_ICONS.get(self.selection_name)
+
     def get_href(self):
+        """Action URL getter"""
         return absolute_url(self.context, self.request,
                             '{}-selection.html'.format(self.selection_name))
 
@@ -445,7 +452,6 @@ class ImageXSSelectionAction(ImageSelectionAction):
     """Image XS selection action"""
 
     selection_name = 'xs'
-    icon_class = 'fas fa-mobile-alt'
 
 
 @ajax_form_config(name='xs-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
@@ -465,7 +471,6 @@ class ImageSMSelectionAction(ImageSelectionAction):
     """Image SM selection action"""
 
     selection_name = 'sm'
-    icon_class = 'fas fa-tablet-alt'
 
 
 @ajax_form_config(name='sm-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
@@ -485,7 +490,6 @@ class ImageMDSelectionAction(ImageSelectionAction):
     """Image MD selection action"""
 
     selection_name = 'md'
-    icon_class = 'fas fa-desktop'
 
 
 @ajax_form_config(name='md-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
@@ -505,7 +509,6 @@ class ImageLGSelectionAction(ImageSelectionAction):
     """Image LG selection action"""
 
     selection_name = 'lg'
-    icon_class = 'fas fa-tv'
 
 
 @ajax_form_config(name='lg-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
@@ -525,7 +528,6 @@ class ImageXLSelectionAction(ImageSelectionAction):
     """Image XL selection action"""
 
     selection_name = 'xl'
-    icon_class = 'fas fa-solar-panel'
 
 
 @ajax_form_config(name='xl-selection.html', context=IResponsiveImage, layer=IPyAMSLayer)
