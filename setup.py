@@ -20,16 +20,15 @@ from setuptools import setup, find_packages
 DOCS = os.path.join(os.path.dirname(__file__),
                     'docs')
 
-README = os.path.join(DOCS, 'README.txt')
-HISTORY = os.path.join(DOCS, 'HISTORY.txt')
+README = os.path.join(DOCS, 'README.rst')
+HISTORY = os.path.join(DOCS, 'HISTORY.rst')
 
-version = '1.4.4'
+version = '1.4.5'
 long_description = open(README).read() + '\n\n' + open(HISTORY).read()
 
 tests_require = [
     'pyams_catalog',
     'pyams_site',
-    'pyams_skin',
     'pyams_zmi',
     'pyramid_zcml',
     'zope.exceptions'
@@ -72,7 +71,7 @@ setup(name='pyams_file_views',
           'pyams_layer',
           'pyams_pagelet',
           'pyams_security',
-          'pyams_skin',
+          'pyams_skin >= 1.8.0',
           'pyams_template',
           'pyams_utils',
           'pyams_viewlet',

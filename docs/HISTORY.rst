@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.4.5
+-----
+ - renamed doctests interfaces and classes for last PyAMS_skin version
+ - get Bootstrap devices icons from PyAMS_skin package
+ - added support for Python 3.11
+
 1.4.4
 -----
  - small error in package requirements
