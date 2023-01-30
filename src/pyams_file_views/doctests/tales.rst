@@ -70,9 +70,9 @@ register Pyramid's renderer:
 You can also use a custom field to define picture selections and width for each device type:
 
     >>> from pyams_skin.interfaces.schema import BootstrapThumbnailSelection
-    >>> from pyams_skin.schema import BootstrapThumbnailsSelectionDictField
+    >>> from pyams_skin.schema import BootstrapThumbnailsSelectionField
     >>> class IMySelection(Interface):
-    ...     thumb_selection = BootstrapThumbnailsSelectionDictField(
+    ...     thumb_selection = BootstrapThumbnailsSelectionField(
     ...         title="Images selection",
     ...         default_width=6,
     ...         change_width=False,
