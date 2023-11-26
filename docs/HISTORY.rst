@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0
+-----
+ - upgraded to Pyramid 2.0
+
 1.4.5
 -----
  - renamed doctests interfaces and classes for last PyAMS_skin version
