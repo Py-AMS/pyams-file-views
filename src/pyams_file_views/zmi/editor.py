@@ -30,14 +30,14 @@ from pyams_viewlet.viewlet import viewlet_config
 from pyams_zmi.form import AdminModalEditForm
 from pyams_zmi.interfaces import IAdminLayer
 
-
 __docformat__ = 'restructuredtext'
 
 from pyams_file_views import _    # pylint: disable=ungrouped-imports
 
 
-@viewlet_config(name='file-editor.action', context=IFile, layer=IAdminLayer,
-                view=Interface, manager=IContextActionsViewletManager, weight=15)
+@viewlet_config(name='file-editor.action',
+                context=IFile, layer=IAdminLayer, view=Interface,
+                manager=IContextActionsViewletManager, weight=15)
 class FileEditorAction(FileModifierAction):
     """File editor action"""
 
@@ -54,16 +54,13 @@ class FileEditorAction(FileModifierAction):
     modal_target = True
 
 
-@ajax_form_config(name='file-editor.html', context=IFile, layer=IPyAMSLayer)
+@ajax_form_config(name='file-editor.html',
+                  context=IFile, layer=IPyAMSLayer)
 class FileEditorForm(AdminModalEditForm):
     """File editor form"""
 
-    @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
-
-    legend = _("Edit file content")
+    subtitle = _("File content")
+    legend = _("File content editor")
 
     prefix = 'editor_form.'
     modal_class = 'modal-xl'

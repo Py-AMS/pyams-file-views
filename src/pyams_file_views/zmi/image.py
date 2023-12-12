@@ -74,11 +74,7 @@ from pyams_file_views import _  # pylint: disable=ungrouped-imports
 class ImagePreviewForm(AdminModalDisplayForm):
     """Image preview"""
 
-    @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
-
+    subtitle = _("Image preview")
     legend = _("Image preview")
     modal_class = 'modal-auto'
 
@@ -161,12 +157,9 @@ class IImageCropFormButtons(Interface):
 class ImageCropForm(FileModifierFormMixin, AdminModalEditForm):
     """Image crop form"""
 
-    @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
+    subtitle = _("Crop image")
+    legend = _("New image selection")
 
-    legend = _("Crop image")
     prefix = 'crop_form.'
 
     fields = Fields(Interface)
@@ -280,12 +273,7 @@ class ImageSelectionForm(FileModifierFormMixin, AdminModalEditForm):
     """Image thumbnail selection form"""
 
     @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
-
-    @property
-    def legend(self):
+    def subtitle(self):
         """Form legend getter"""
         thumbnailer = queryAdapter(self.context, IThumbnailer, name=self.selection_name)
         if thumbnailer is not None:
@@ -293,6 +281,7 @@ class ImageSelectionForm(FileModifierFormMixin, AdminModalEditForm):
             return translate(_("{} selection")).format(translate(thumbnailer.label).lower())
         return None
 
+    legend = _("Image selection")
     prefix = 'thumbnail_form.'
 
     fields = Fields(Interface)
@@ -556,13 +545,11 @@ class ImageSelectionsAction(ContextAction):
 class ImageSelectionsDisplayForm(AdminModalDisplayForm):
     """Image selections display form"""
 
-    @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
-
-    legend = _("Display all image selections")
     modal_class = 'modal-xl'
+
+    subtitle = _("Display all image selections")
+    legend = _("Current image selections")
+
     fields = Fields(Interface)
 
 
@@ -651,12 +638,8 @@ class IImageResizeFormButtons(Interface):
 class ImageResizeForm(FileModifierFormMixin, AdminModalEditForm):
     """Image resize form"""
 
-    @property
-    def title(self):
-        """Form title getter"""
-        return self.context.title or self.context.filename
-
-    legend = _("Resize image")
+    subtitle = _("Resize image")
+    legend = _("New image size")
 
     fields = Fields(IImageResizeInfo)
     fields['keep_ratio'].widget_factory = SingleCheckBoxFieldWidget
