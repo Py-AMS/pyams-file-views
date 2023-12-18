@@ -32,7 +32,7 @@
 		</div>
 		<div class="col">
 			<div class="row">
-				<div class="col">
+				<div class="col my-2">
 					<i tal:omit-tag="" i18n:translate="">Current value:</i>
 					<i tal:omit-tag="">${value.content_type}</i>
 					<i tal:condition="value.content_type.startswith('image/') and not value.content_type.startswith('image/svg')"
