@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.2
+-----
+ - added margin on content-type label in file input widget
+
 2.0.1
 -----
  - updated modal forms title
