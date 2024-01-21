@@ -17,7 +17,8 @@
 			<a tal:define="target view.get_thumbnail_target()"
 			   tal:omit-tag="not:target"
 			   href="${target}" data-toggle="modal">
-				<img class="border-0"
+				<img id="thumbnail_${tales:cache_key(value)}"
+					 class="border-0"
 					 src="${view.get_thumbnail()}"
 					 alt="${value.title or value.filename}" />
 			</a>
