@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.3
+-----
+ - added thumbnail ID in file input widget template
+
 2.0.2
 -----
  - added margin on content-type label in file input widget
