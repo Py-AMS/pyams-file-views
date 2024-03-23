@@ -63,8 +63,8 @@ msgid ""
 "and adaptive selections!**"
 msgstr ""
 "Vous pouvez utiliser ce formulaire pour recadrer une image.  \n"
-"**ATTENTION :** Recadrer une image modifie l'image originale et réinitialise toutes les "
-"sélections de vignettes !"
+"**ATTENTION :** Recadrer une image modifie l'image originale et réinitialise "
+"toutes les sélections de vignettes !"
 
 #: src/pyams_file_views/zmi/image.py:268
 msgid "Select thumbnail"
@@ -128,8 +128,8 @@ msgid ""
 msgstr ""
 "Vous pouvez utiliser ce formulaire pour modifier la taille d'une image, dans "
 "la limite des dimensions de l'image d'origine.  \n"
-"**ATTENTION :** Cette opération modifie l'image originale et réinitialise toutes les "
-"sélections de vignettes !"
+"**ATTENTION :** Cette opération modifie l'image originale et réinitialise "
+"toutes les sélections de vignettes !"
 
 #: src/pyams_file_views/zmi/editor.py:50
 msgid "Edit file content"
