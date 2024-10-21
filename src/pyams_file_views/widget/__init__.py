@@ -18,7 +18,7 @@ and images.
 
 import os.path
 from cgi import FieldStorage
-from datetime import datetime
+from datetime import datetime, timezone
 
 from pyramid.interfaces import IView
 from zope.component import queryMultiAdapter
@@ -79,7 +79,7 @@ class FileWidget(FileWidgetBase):
         """Image timestamp getter"""
         dc = IZopeDublinCore(self.current_value, None)  # pylint: disable=invalid-name
         if dc is None:
-            return datetime.utcnow().timestamp()
+            return datetime.now(timezone.utc).timestamp()
         return dc.modified.timestamp()  # pylint: disable=no-member
 
     @property
