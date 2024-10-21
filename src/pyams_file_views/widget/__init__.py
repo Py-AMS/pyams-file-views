@@ -122,7 +122,11 @@ class FileWidget(FileWidgetBase):
                     timestamp = dc.modified.timestamp()  # pylint: disable=no-member
                 return '{}?_={}'.format(absolute_url(display, self.request),
                                         timestamp)
-        _name, ext = os.path.splitext(self.current_value.filename)
+        filename = self.current_value.filename
+        if filename:
+            _name, ext = os.path.splitext(filename)
+        else:
+            ext = None
         return '/--static--/pyams_file/img/{}'.format(
             EXTENSIONS_THUMBNAILS.get(ext, 'unknown.png'))
 
