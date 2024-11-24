@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0.4
+-----
+ - handle files without filename when getting thumbnails
+ - replaced datetime.utcnow() with datetime.now(timezone.utc)
+
 2.0.3
 -----
  - added thumbnail ID in file input widget template
