@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.6
+-----
+ - updated Gitlab-CI for Python 3.11 and 3.12
+
 2.0.5
 -----
  - added check on file content-type to display editor action
