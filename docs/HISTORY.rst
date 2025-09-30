@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.5
+-----
+ - added check on file content-type to display editor action
+
 2.0.4
 -----
  - handle files without filename when getting thumbnails
