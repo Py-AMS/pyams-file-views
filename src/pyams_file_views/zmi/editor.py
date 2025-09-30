@@ -42,10 +42,11 @@ class FileEditorAction(FileModifierAction):
     """File editor action"""
 
     def __new__(cls, context, request, view, manager):  # pylint: disable=unused-argument
-        if not (context.content_type.startswith('text/') or
-                context.content_type.startswith('image/svg')):
-            return None
-        return FileModifierAction.__new__(cls)
+        if context.content_type and \
+                (context.content_type.startswith('text/') or
+                 context.content_type.startswith('image/svg')):
+            return FileModifierAction.__new__(cls)
+        return None
 
     hint = _("Edit file content")
     icon_class = 'fa fa-file-alt'
